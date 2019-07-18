@@ -13,6 +13,11 @@
 	<script src="../js/popper.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </head>
+<!-- 
+	.form-group => label 과 form element(input, select 등)를 감싸는 element(html-css에서는 tag를 의미)
+	.form-control => form element(input, select 등)가 원래 가지고 있는 속성인 display: inline-block 속성을 block으로 바꾸어주고, 이쁘게 만들어주고, width: 100% 적용
+	.form-inline => 보통 form tag에 적용하며, form-control이 적용되어 display block인 요소들을 display: inline-block으로 바꿔준다.
+ -->
 
 <body>
 	<div class="container">
@@ -20,19 +25,35 @@
 			<div class="alert alert-dark" role="alert">
 				<h4><i class="fas fa-user-edit"></i> 회원가입 <small>지금 바로 가입하세요</small></h4>
 			</div>
-			<form action="#">
+			<form action="#" class="was-validated">
 				<ul class="list-group">
 					<li class="list-group-item">
 						<div class="form-group row align-items-center">
 							<label for="userid" class="col-12 col-md-2">아이디 : </label>
-							<input type="text" class="form-control col-12 col-md-10" name="userid" id="userid" placeholder="아이디를 입력하세요.">
-						</div> <!-- input을 감싸고 있던 div를 삭제하고 그 div가 갖고있던 class를 input 안에 넣어줌 -->
+							<div class="col-12 col-md-10">
+								<input type="text" class="form-control" name="userid" id="userid" placeholder="아이디를 입력하세요." required>
+								<div class="valid-feedback">사용가능합니다.</div>
+								<div class="invalid-feedback">아이디를 입력하세요.</div>
+							</div>
+						</div>
 					</li>
 					<li class="list-group-item">
 						<div class="form-group row align-items-center">
 							<div class="col-12 col-md-2">이름 : </div>
 							<div class="col-12 col-md-10">
-								<input type="text" class="form-control" name="username" id="username" placeholder="이름을 입력하세요.">
+								<input type="text" class="form-control" name="username" id="username" placeholder="이름을 입력하세요." required>
+								<div class="valid-feedback">사용가능합니다.</div>
+								<div class="invalid-feedback">이름을 입력하세요.</div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="form-group row align-items-center">
+							<label for="cmt" class="col-12 col-md-2">남기실 말:</label>
+							<div class="col-12 col-md-10">
+								<textarea class="form-control" name="cmt" id="cmt" rows="10" placeholder="남기실 말을 작성해주세요." required></textarea> <!-- col은 알아서 들어가므로 삭제 -->
+								<div class="valid-feedback">사용가능합니다.</div>
+								<div class="invalid-feedback">입력해주세요.</div>
 							</div>
 						</div>
 					</li>
@@ -49,7 +70,8 @@
 				<div class="form-group">
 					<label for="uname">Username:</label>
 					<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-					<div class="valid-feedback">Valid.</div>
+					<!--필수요소는 required-->
+					<div class="valid-feedback">Valid.</div> <!-- 안보이다가 글씨를 쓰면 보임 -->
 					<div class="invalid-feedback">Please fill out this field.</div>
 				</div>
 				<div class="form-group">
