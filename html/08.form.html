@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Form</title>
+	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base-bootstrap.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="border p-3 my-3">
+			<div class="alert alert-dark" role="alert">
+				<h4><i class="fas fa-user-edit"></i> 회원가입 <small>지금 바로 가입하세요</small></h4>
+			</div>
+			<form action="#">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="form-group row align-items-center">
+							<label for="userid" class="col-12 col-md-2">아이디 : </label>
+							<input type="text" class="form-control col-12 col-md-10" name="userid" id="userid" placeholder="아이디를 입력하세요.">
+						</div> <!-- input을 감싸고 있던 div를 삭제하고 그 div가 갖고있던 class를 input 안에 넣어줌 -->
+					</li>
+					<li class="list-group-item">
+						<div class="form-group row align-items-center">
+							<div class="col-12 col-md-2">이름 : </div>
+							<div class="col-12 col-md-10">
+								<input type="text" class="form-control" name="username" id="username" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="p-3 text-center">
+					<button type="submit" class="btn btn-primary">회원가입</button>
+					<button type="reset" class="btn btn-danger">다시작성</button>
+				</div>
+			</form>
+		</div> <!-- border p-3 my-3 end -->
+
+		<div class="border p-3 my-3">
+			<form action="/action_page.php" class="was-validated">
+				<div class="form-group">
+					<label for="uname">Username:</label>
+					<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+					<div class="valid-feedback">Valid.</div>
+					<div class="invalid-feedback">Please fill out this field.</div>
+				</div>
+				<div class="form-group form-check">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Check this checkbox to continue.</div>
+					</label>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div> <!-- border p-3 my-3 end -->
+	</div> <!-- container end -->
+
+
+
+	<!-- <div class="row">
+		<div class="border border-dark p-3 col-12 col-md-4 col-lg-2"></div>
+		<div class="border border-dark p-3 col-12 col-md-4 col-lg-2"></div>
+		<div class="border border-dark p-3 col-12 col-md-4 col-lg-8"></div>
+	</div> -->
+</body>
+
+</html>
